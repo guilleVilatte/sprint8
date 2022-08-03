@@ -7,7 +7,8 @@ export default createStore({
     starShip: {},
     nextPage: 1,
     showModalLog: false,
-    showModalReg: false
+    showModalReg: false,
+    storeEmail: ""
   },
   getters: {
     getNextPage(state) {
@@ -40,6 +41,10 @@ export default createStore({
     closeModal: (state) => {
       state.showModalLog = false
       state.showModalReg = false
+    },
+    mostrarEmail: (state, email) => {
+      state.storeEmail = email
+      console.log(state.storeEmail)
     }
   },
   actions: {

@@ -59,7 +59,7 @@ export default {
     margin:auto;
 }
 img {
-    height: 55vh;
+    height: 65vh;
     width: 80%;
     border-bottom: 3px solid rgb(173, 3, 3);
 }
@@ -74,12 +74,16 @@ img {
         width: 100%;
     }
     img {
-    height: 40vh;
-    width: 100%;
+        width: 100%;
     }
     .datos{
-    width: 100%;
-    margin:auto;
+        width: 100%;
+        margin:auto;
+    }
 }
+@media only screen and (max-width: 776px) {
+    img {
+        height: 40vh;
+    }   
 }
 </style>

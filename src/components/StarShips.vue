@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div>
+        <div class="container">
             <div class="cajas bg-dark" v-for="(nave, i) in starShips" :key="i" >
                 <router-link class="rte" :to="{ name: 'details', params: { id: (nave.url).slice(-4).replace(/[^0-9]/g, '') } }"
-                    style="text-decoration:none; color: rgb(231, 231, 42);">
+                    style="text-decoration:none; color: gray;">
                     <h5 class="group" v-if="nave.name != undefined">{{ nave.name.toUpperCase() }}</h5>
                     <p class="group">{{ nave.model }}</p>
                 </router-link>
             </div>
         </div>
-        <div>
+        <div class="d-flex justify-content-center">
             <button @click="extender()">View More</button>
         </div>
     </div>
@@ -59,14 +59,17 @@ export default {
     margin-left: 15px;
 }
 h5:hover{
-    color: gray;
+    color: rgb(231, 231, 42);
 }
 button {
-    background: rgb(231, 231, 42);
+    background: gray;
     color: black;
     font-weight: bold;
     border-radius: 5px;
     margin: 20px;
+}
+button:hover{
+    background: rgb(231, 231, 42);
 }
 
 @media only screen and (max-width: 776px) {
