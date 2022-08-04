@@ -8,7 +8,8 @@ export default createStore({
     nextPage: 1,
     showModalLog: false,
     showModalReg: false,
-    storeEmail: ""
+    storeEmail: "",
+    showBurgerModal:false
   },
   getters: {
     getNextPage(state) {
@@ -42,9 +43,15 @@ export default createStore({
       state.showModalLog = false
       state.showModalReg = false
     },
+    closeModalBurger: (state) => {
+      state.showBurgerModal = false
+    },
     mostrarEmail: (state, email) => {
       state.storeEmail = email
       console.log(state.storeEmail)
+    },
+    mostrarBurgerModal: (state) => {
+      state.showBurgerModal = true
     }
   },
   actions: {

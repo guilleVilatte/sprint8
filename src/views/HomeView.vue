@@ -1,6 +1,6 @@
 <template>
   <div class="home d-flex flex-column justify-content-start align-items-center">
-    <router-link class="caja mt-5 d-md-flex rounded-2" to="/starships" style="text-decoration:none;">
+    <router-link class="caja mt-sm-4 d-md-flex rounded-2" to="/starships" style="text-decoration:none;">
       <h4>STAR WARS: STARSHIPS</h4>
       <img class="nave img-fluid" src="../../public/img/5.jpg" alt="">
     </router-link>
