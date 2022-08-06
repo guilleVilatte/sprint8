@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div class="container starships">
-            <div class="cajas d-flex d-lg-block bg-dark" v-for="(nave, i) in starShips" :key="i">
+        <div class="container row">
+            <div class="cajas col-6 d-flex d-lg-block bg-dark" v-for="(actor, i) in actors" :key="i">
                 <router-link class="rout"
-                    :to="{ name: 'details', params: { id: (nave.url).slice(-4).replace(/[^0-9]/g, ''), urlPilots: nave.pilots } }"
+                    :to="{ name: 'detailsActors', params: { id: (actor.url).slice(-4).replace(/[^0-9]/g, ''), urlFilms: actor.films, urlStarShips: actor.starships } }"
                     style="text-decoration:none; color: gray;">
                     <div class="group">
-                        <h3 class="" v-if="nave.name != undefined">{{ nave.name.toUpperCase() }}</h3>
-                        <p class="fs-5">{{ nave.model }}</p>
+                        <h3 class="" v-if="actor.name != undefined">{{ actor.name.toUpperCase() }}</h3>
+                        <p class="fs-5">{{ actor.gender }}</p>
                     </div>
                     <img class="im"
-                        :src="'https://starwars-visualguide.com/assets/img/starships/' + (nave.url).slice(-4).replace(/[^0-9]/g, '') + '.jpg'"
+                        :src="'https://starwars-visualguide.com/assets/img/characters/' + (actor.url).slice(-4).replace(/[^0-9]/g, '') + '.jpg'"
                         alt="">
                 </router-link>
             </div>
@@ -25,34 +25,35 @@
 import { mapState } from 'vuex'
 
 export default {
-    name: 'StarShipsView',
+    name: 'ActorsView',
     data() {
         return {
             page: 1,
         }
     },
     computed: {
-        ...mapState(['starShips'])
+        ...mapState(['actors'])
     },
     methods: {
         extender() {
-            if (this.$store.getters.getNextPage < 4) {
-                this.$store.commit('viewMore');
-                this.$store.dispatch('obtenerNaves', this.$store.getters.getNextPage);
+            if (this.$store.getters.getNextPageActors < 9) {
+                this.$store.commit('viewMoreActors');
+                console.log(this.$store.getters.getNextPageActors)
+                this.$store.dispatch('obtenerActores', this.$store.getters.getNextPageActors);
             } else {
                 this.nextPage = null
             }
         }
     },
     created() {
-        this.$store.dispatch('obtenerNaves', this.page);
+        this.$store.dispatch('obtenerActores', this.page);
     }
 }
 </script>
 
 <style scoped>
 .cajas {
-    width: 70%;
+    width: 40%;
     margin: auto;
     margin-top: 10px;
     padding: 6px;
@@ -91,9 +92,9 @@ button:hover {
     background: rgb(231, 231, 42);
 }
 
-@media only screen and (max-width: 976px) {
+@media only screen and (max-width: 1206px) {
     .cajas {
-        width: 70%;
+        width: 40%;
         height: 400px;
         margin-top: 30px;
     }
@@ -109,8 +110,18 @@ button:hover {
     }
 }
 
-@media only screen and (max-width: 776px) {
+@media only screen and (max-width: 876px) {
     .cajas {
+        width: 48%;
+    }
+}
+@media only screen and (max-width: 576px){
+  .cajas {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 576px){
+  .cajas {
         width: 100%;
     }
 }

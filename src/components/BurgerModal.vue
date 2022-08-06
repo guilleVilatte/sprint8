@@ -9,6 +9,7 @@
             <nav class="mt-4 ms-3">
                 <router-link class="rt mt-3 ms-3" @click="closeModalBurger()" to="/">HOME</router-link>
                 <router-link class="rt mt-3 ms-3" @click="closeModalBurger()" to="/starships">STARSHIPS</router-link>
+                <router-link class="rt mt-3 ms-3" @click="closeModalBurger()" to="/actors">ACTORS</router-link>
             </nav>
             <div class="iconos d-flex justify-content-center ">
                 <a href="https://www.facebook.com/starwars.es/?brand_redir=169299103121699" target="_blank">

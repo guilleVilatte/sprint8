@@ -28,6 +28,7 @@
     <nav class="routes d-none d-sm-flex justify-content-center mb-1">
       <router-link class="route uno" to="/">HOME</router-link>
       <router-link class="route dos" to="/starships">STARSHIPS</router-link>
+      <router-link class="route tres" to="/actors">ACTORS</router-link>
     </nav>
     <router-view></router-view>
   </div>
@@ -94,7 +95,7 @@ export default {
   height: 2px;
   width: 30px;
   background: white;
-  box-shadow: 0px 0px 10px 3px red;
+  box-shadow: 0px 0px 10px 3px rgb(196, 55, 55);
   transform-origin: center;
   transform: scaleX(0);
   transition: transform 0.1s ease-in-out;
@@ -109,7 +110,22 @@ export default {
   height: 2px;
   width: 30px;
   background: white;
-  box-shadow: 0px 0px 10px 3px yellow;
+  box-shadow: 0px 0px 10px 3px rgb(182, 182, 46);
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+.tres:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 48px;
+  height: 2px;
+  width: 30px;
+  background: white;
+  box-shadow: 0px 0px 10px 3px rgb(61, 61, 173);
   transform-origin: center;
   transform: scaleX(0);
   transition: transform 0.1s ease-in-out;
