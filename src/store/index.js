@@ -7,6 +7,9 @@ export default createStore({
     starShip: {},
     pilots: [],
     actors: [],
+    actor: {},
+    films: [],
+    starshipsActor: [],
     nextPage: 1,
     nextPageActors:1,
     showModalLog: false,
@@ -41,11 +44,12 @@ export default createStore({
     },
     oneStarShip: (state, shipAction) => {
       state.starShip = shipAction
-      console.log(state.starShip.pilots)
     },
     pilots: (state, pilotsAction) => {
       state.pilots = pilotsAction
-      console.log(state.pilots)
+    },
+    oneActor: (state, actorAction) => {
+      state.actor = actorAction
     },
     fullActors: (state, actorsAction) => {
       let control;
@@ -56,6 +60,12 @@ export default createStore({
       if (state.actors[0] == undefined || control == -1) {
         state.actors = state.actors.concat(actorsAction)
       }
+    },
+    films: (state, filmsAction) => {
+      state.films = filmsAction
+    },
+    starships: (state, starshipsAction) => {
+      state.starshipsActor = starshipsAction
     },
     viewMore: (state) => {
       state.nextPage++
@@ -94,20 +104,40 @@ export default createStore({
       commit('oneStarShip', ship)
     },
     async obtenerPilots({ commit }, url) {
-      console.log(url)
       const pilot = []
       if (url != undefined) {
         for (let i = 0; i < url.length; i++) {
           pilot.push(await axios.get(url[i]).then(response => response.data))
         }
         commit('pilots', pilot)
-        console.log(pilot)
       }
     },
     async obtenerActores({ commit }, page) {
       const actores = await axios.get(`https://swapi.py4e.com/api/people/?page=${page}`).then(response => response.data.results)
       commit('fullActors', actores)
-    }
+    },
+    async obtenerActor({ commit }, id) {
+      const actor = await axios.get(`https://swapi.py4e.com/api/people/${id}`).then(response => response.data)
+      commit('oneActor', actor)
+    },
+    async obtenerFilms({ commit }, url) {
+      const film = []
+      if (url != undefined) {
+        for (let i = 0; i < url.length; i++) {
+          film.push(await axios.get(url[i]).then(response => response.data))
+        }
+        commit('films', film)
+      }
+    },
+    async obtenerStarships({ commit }, url) {
+      const starship = []
+      if (url != undefined) {
+        for (let i = 0; i < url.length; i++) {
+          starship.push(await axios.get(url[i]).then(response => response.data))
+        }
+        commit('starships', starship)
+      }
+    },
   },
   modules: {
   }

@@ -10,8 +10,7 @@
                         <p class="fs-5">{{ nave.model }}</p>
                     </div>
                     <img class="im"
-                        :src="'https://starwars-visualguide.com/assets/img/starships/' + (nave.url).slice(-4).replace(/[^0-9]/g, '') + '.jpg'"
-                        alt="">
+                        :src="url + (nave.url).slice(-4).replace(/[^0-9]/g, '') + '.jpg'">
                 </router-link>
             </div>
         </div>
@@ -29,6 +28,7 @@ export default {
     data() {
         return {
             page: 1,
+            url: 'https://starwars-visualguide.com/assets/img/starships/'
         }
     },
     computed: {

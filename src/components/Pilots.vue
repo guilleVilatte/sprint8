@@ -28,7 +28,6 @@ export default {
     created() {
         this.routeURLPilots = this.$route.params.urlPilots;
         this.$store.dispatch('obtenerPilots', this.routeURLPilots);
-        console.log(this.urlPilots)
     },
     computed: {
         ...mapState(['pilots'])

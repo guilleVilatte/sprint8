@@ -24,7 +24,7 @@
                 Crew - {{ starShip.crew }}
             </div>
             <h4 class="text-center">Pilots</h4>
-            <Pilots class="col-sm-6" :urlPilots="starShip.pilots"></Pilots>
+            <Pilots :urlPilots="starShip.pilots" v-if="starShip.pilots != undefined"></Pilots>
         </div>
     </div>
 </template>
