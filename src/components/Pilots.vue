@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .piloto {
-    width: 45%;
+    width: 70%;
     margin-top: 10px;
     margin-right: 20px;
     padding: 6px;
@@ -49,16 +49,16 @@ export default {
 
 .im {
     height: 260px;
-    width: 200px;
+    width: 250px;
     border-left: 3px solid rgb(231, 231, 42);
     position: absolute;
     top: 0;
     right: 0;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
     .piloto {
-        width: 45%;
+        width: 60%;
         height: 570px;
         margin-top: 30px;
     }

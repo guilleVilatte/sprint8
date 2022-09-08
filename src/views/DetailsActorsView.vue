@@ -68,8 +68,8 @@ export default {
 }
 
 .nv {
-    height: 65vh;
-    width: 60%;
+    height: 75vh;
+    width: 50%;
     margin-bottom: 50px;
     
 }

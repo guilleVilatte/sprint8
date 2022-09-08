@@ -27,11 +27,11 @@ export default {
   background: rgb(39, 39, 39);
   border-radius: 8px;
   overflow: hidden;
-  width: 50%;
+  width: 70%;
 }
 
 .nave {
-  height: 30vh;
+  height: 40vh;
   width: 50%;
   padding: 0;
   border-left: 3px solid rgb(231, 231, 42);

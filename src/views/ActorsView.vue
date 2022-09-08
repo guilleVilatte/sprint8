@@ -1,17 +1,18 @@
 <template>
     <div>
         <div class="container row">
-            <div class="cajas col-6 d-flex d-lg-block bg-dark" v-for="(actor, i) in actors" :key="i">
+            <div class="cajas col-6 d-flex d-lg-block bg-dark" v-for="(actor, i) in actors" :key="i" >
                 <router-link class="rout"
                     :to="{ name: 'detailsActors', params: { id: (actor.url).slice(-4).replace(/[^0-9]/g, ''), urlFilms: actor.films, urlStarShips: actor.starships } }"
                     style="text-decoration:none; color: gray;">
                     <div class="group">
                         <h3 class="" v-if="actor.name != undefined">{{ actor.name.toUpperCase() }}</h3>
-                        <p class="fs-5">{{ actor.gender }}</p>
-                    </div>
-                    <img class="im"
+                        <p class="fs-5" >{{ actor.gender }}</p>
+                        <img class="im"
                         :src="'https://starwars-visualguide.com/assets/img/characters/' + (actor.url).slice(-4).replace(/[^0-9]/g, '') + '.jpg'"
                         alt="">
+                    </div>
+                    
                 </router-link>
             </div>
         </div>
