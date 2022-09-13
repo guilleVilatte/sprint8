@@ -31,7 +31,7 @@ export default {
 }
 
 .nave {
-  height: 40vh;
+  height: 300px;
   width: 50%;
   padding: 0;
   border-left: 3px solid rgb(231, 231, 42);
