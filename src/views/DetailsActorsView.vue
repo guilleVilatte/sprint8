@@ -68,15 +68,15 @@ export default {
 }
 
 .nv {
-    height: 75vh;
-    width: 50%;
+    height: 550px;
+    width: 40%;
     margin-bottom: 50px;
     
 }
 
 @media only screen and (max-width: 976px) {
     .nv {
-        width: 100%;
+        width: 80%;
     }
 
     .datos {
@@ -87,7 +87,7 @@ export default {
 
 @media only screen and (max-width: 776px) {
     .nv {
-        height: 40vh;
+        height: 450px;
     }
 }
 </style>

@@ -46,15 +46,15 @@ h4 {
 h4:hover {
   color: rgb(231, 231, 42);
 }
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1300px){
   .caja {
-  width: 70%;
+  width: 60%;
 }
 }
 @media only screen and (max-width: 995px) {
   .nave {
     width: 100%;
-    height: 40vh;
+    height: 250px;
     border-top: 3px solid rgb(231, 231, 42);
     border-left: none;
   }
@@ -62,9 +62,5 @@ h4:hover {
   width: 100%;
 }
 }
-@media only screen and (max-width: 575px) {
-  .caja{
-    width: 90%;
-  }
-}
+
 </style>
